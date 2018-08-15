@@ -114,7 +114,7 @@ public class Aplicacion extends JFrame {
 		file.addActionListener(new ActionListener() { /**/
 			int cont=1;
 			public void actionPerformed(ActionEvent a) { // nesesario para el cambio de resoluciones. se movieron un 50 hacia abajo
-				if (cont==1) {
+				if (cont==1 && menuActivo==false) {
 					Animacion.Animacion.bajar(174, 224,1,1, edit);
 					separator3.setBounds(30, 261, 100, 1);
 					Animacion.Animacion.bajar(220, 270, 1, 1, config);
@@ -127,6 +127,7 @@ public class Aplicacion extends JFrame {
 					System.out.println("File cont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=0;
 				}else {
+					if (cont==0 && menuActivo==true) {
 					Animacion.Animacion.subir(224, 174,1,1, edit);
 					separator3.setBounds(30, 211, 100, 1);
 					Animacion.Animacion.subir(270, 220, 1, 1, config);
@@ -138,6 +139,10 @@ public class Aplicacion extends JFrame {
 					aviso.setVisible(false);
 					System.out.println("File cont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=1;
+					}else {
+						aviso.setBounds(180, config.getY(), 30, 35);
+						aviso.setVisible(true);
+					}
 				}
 			}
 		});
@@ -188,7 +193,7 @@ public class Aplicacion extends JFrame {
 		Login.add(separator3);
 		
 		config = new RSButtonMetro();
-		config.addActionListener(new ActionListener() { //Error, impedir que halla 2 despliegues a la vez 
+		config.addActionListener(new ActionListener() { //Error, impedir que halla 2 despliegues a la vez #SOLUCIONADO#
 			int cont=1;
 			public void actionPerformed(ActionEvent a) {
 				if (cont==1 && menuActivo==false) {
@@ -208,7 +213,8 @@ public class Aplicacion extends JFrame {
 					System.out.println("Option ont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=1;
 					}else {
-						
+						aviso.setBounds(180, file.getY(), 30, 35);
+						aviso.setVisible(true);
 					}
 				}
 			}
