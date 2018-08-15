@@ -12,12 +12,12 @@ public class Aplicacion extends JFrame {
 	public int x,y;
 	public JButton exit;
 	public JLabel label, inicio;
-	public RSButtonMetro file,edit,config,exitt,about,resolucion,estandar,basica;
+	public RSButtonMetro file,edit,config,exitt,about,resolucion,estandar,basica,newFile;
 	public String bandera;
 	public boolean b=true, menuActivo=false;
 		public Aplicacion frame = this; // nesesario para el cambio de resoluciones.
 	public JLabel aviso;
-	public JSeparator separator,separator2,separator3,separator4;
+	public JSeparator separator,separator2,separator3,separator4; // se crean nuevos separadores- tomar en cuenta en resoluciones
 	/**
 	 * Launch the application.
 	 */
@@ -111,20 +111,32 @@ public class Aplicacion extends JFrame {
 		Login.add(separator);
 		
 		file = new RSButtonMetro();
-		file.addActionListener(new ActionListener() {
+		file.addActionListener(new ActionListener() { /**/
 			int cont=1;
-			public void actionPerformed(ActionEvent a) {
+			public void actionPerformed(ActionEvent a) { // nesesario para el cambio de resoluciones. se movieron un 50 hacia abajo
 				if (cont==1) {
-					//Animacion.Animacion.bajar(266, 350, 2, 1, exitt);
-					aviso.setVisible(false);
+					Animacion.Animacion.bajar(174, 224,1,1, edit);
+					separator3.setBounds(30, 261, 100, 1);
+					Animacion.Animacion.bajar(220, 270, 1, 1, config);
+					separator4.setBounds(30, 307, 100, 1);
+					
+					newFile.setVisible(true);
 					menuActivo=true;
-					System.out.println("File cont: "+cont);
+					aviso.setBounds(180, 174, 30, 35);// nesesario para el cambio de resoluciones.
+					aviso.setVisible(false);
+					System.out.println("File cont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=0;
 				}else {
-					//Animacion.Animacion.subir(300, 256, 2, 1, exitt);
-					aviso.setVisible(false);
+					Animacion.Animacion.subir(224, 174,1,1, edit);
+					separator3.setBounds(30, 211, 100, 1);
+					Animacion.Animacion.subir(270, 220, 1, 1, config);
+					separator4.setBounds(30, 257, 100, 1);
+					
+					newFile.setVisible(false);
 					menuActivo=false;
-					System.out.println("File ont: "+cont);
+					aviso.setBounds(180, 266, 30, 35);// nesesario para el cambio de resoluciones.
+					aviso.setVisible(false);
+					System.out.println("File cont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=1;
 				}
 			}
@@ -139,6 +151,18 @@ public class Aplicacion extends JFrame {
 		file.setText("File");
 		file.setBounds(23, 128, 150, 35); 							//Modificado 
 		Login.add(file);
+		
+		newFile = new RSButtonMetro();								// nesesario para el cambio de resoluciones.
+		newFile.setVisible(false);
+		newFile.setText("New File ");
+		newFile.setHorizontalAlignment(SwingConstants.LEFT);
+		newFile.setFont(new Font("Roboto Thin", Font.BOLD, 20));
+		newFile.setFocusable(false);
+		newFile.setColorPressed(new Color(142, 153, 243));
+		newFile.setColorNormal(new Color(92, 107, 192));
+		newFile.setColorHover(new Color(142, 153, 243));
+		newFile.setBounds(60, 174, 110, 35);
+		Login.add(newFile);
 		
 		separator2 = new JSeparator();
 		separator2.setBounds(30, 165, 100, 1);
@@ -164,23 +188,28 @@ public class Aplicacion extends JFrame {
 		Login.add(separator3);
 		
 		config = new RSButtonMetro();
-		config.addActionListener(new ActionListener() {
+		config.addActionListener(new ActionListener() { //Error, impedir que halla 2 despliegues a la vez 
 			int cont=1;
 			public void actionPerformed(ActionEvent a) {
-				if (cont==1) {
+				if (cont==1 && menuActivo==false) {
 					//Animacion.Animacion.bajar(266, 350, 2, 1, exitt);
 					aviso.setVisible(false);
 					resolucion.setVisible(true);
 					menuActivo=true;
-					System.out.println("Option cont: "+cont);
+					System.out.println("Option cont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=0;
 				}else {
+					if(cont==0 && menuActivo==true) {
 					//Animacion.Animacion.subir(300, 256, 2, 1, exitt);
+						//aviso.setBounds(180, 266, 30, 35);
 					aviso.setVisible(false);
 					resolucion.setVisible(false);
 					menuActivo=false;
-					System.out.println("Option cont: "+cont);
+					System.out.println("Option ont: "+cont+"-menuActivo: -"+menuActivo);
 					cont=1;
+					}else {
+						
+					}
 				}
 			}
 		});
@@ -199,7 +228,7 @@ public class Aplicacion extends JFrame {
 		Login.add(separator4);
 		
 		about = new RSButtonMetro();
-		about.addActionListener(new ActionListener() {
+		about.addActionListener(new ActionListener() { /**/
 			int cont=1;
 			public void actionPerformed(ActionEvent a) {
 			  if(about.getText().equals("Exit") && bandera.equals("resolucion")) {
@@ -216,14 +245,17 @@ public class Aplicacion extends JFrame {
 						Animacion.Animacion.mover_derecha(-175, 23, 1, 1, file);
 						Animacion.Animacion.mover_derecha(-175, 23, 1, 1, edit);
 						Animacion.Animacion.mover_derecha(-175, 23, 1, 1, config);
-						System.out.println("About in exit value cont: "+cont);
+						separator2.setVisible(true);
+						separator3.setVisible(true);
+						separator4.setVisible(true);
+					System.out.println("About in exit value cont: "+cont);
 					cont=1;
 				}else {
 					if(cont==1 && menuActivo==false)	{ //la opcion para saber cuando un menu esta activo o algo // tomarlo en cuenta en la resolucion
 						Animacion.Animacion.mover_izquierda(23, -175, 2, 1, file);
 						Animacion.Animacion.mover_izquierda(23, -175, 2, 1, edit);
 						Animacion.Animacion.mover_izquierda(23, -175, 2, 1, config);
-						new com.etc.About().acercaDe(Login); /*About anadirlo a resolucion basica*/
+							new com.etc.About().acercaDe(Login); /*About anadirlo a resolucion basica*/
 						System.out.println("About cont: "+cont);
 						cont=0;
 					}else {
@@ -250,7 +282,7 @@ public class Aplicacion extends JFrame {
 		Login.add(about);
 		
 		resolucion = new RSButtonMetro();
-		resolucion.addActionListener(new ActionListener() {
+		resolucion.addActionListener(new ActionListener(){ /**/
 			int cont=1;
 			public void actionPerformed(ActionEvent e) {
 				if(cont==1) {
@@ -258,17 +290,22 @@ public class Aplicacion extends JFrame {
 					Animacion.Animacion.mover_izquierda(23, -175, 1, 1, file);
 					Animacion.Animacion.mover_izquierda(23, -175, 1, 1, edit);
 					Animacion.Animacion.mover_izquierda(23, -175, 1, 1, config);
+					separator2.setVisible(false);
+					separator3.setVisible(false);
+					separator4.setVisible(false);
 					/*Animacion de botones principales*/
 						resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 25));
 						resolucion.setBounds(23, 128, 150, 35);
 						resolucion.setColorPressed(new Color(92, 107, 192));
 						resolucion.setColorNormal(new Color(92, 107, 192));
 						resolucion.setColorHover(new Color(92, 107, 192));
+						//xx
 						estandar.setVisible(true);
 						basica.setVisible(true);
+						//xx
 						bandera="resolucion";
-						about.setText("Exit");
-						System.out.println("Resolution cont: "+cont);
+					about.setText("Exit");
+					System.out.println("Resolution cont: "+cont);
 				}//fin if
 				//System.out.println("Resolution listener");
 			}
@@ -287,7 +324,7 @@ public class Aplicacion extends JFrame {
 		estandar = new RSButtonMetro();
 		estandar.setVisible(false);
 		estandar.setToolTipText("Estandar");
-		estandar.addActionListener(new ActionListener() {
+		estandar.addActionListener(new ActionListener() { /**/
 			int cont=1;
 			public void actionPerformed(ActionEvent e) {
 				if(b==false) {
@@ -314,7 +351,7 @@ public class Aplicacion extends JFrame {
 		
 		basica = new RSButtonMetro();
 		basica.setVisible(false);
-		basica.addActionListener(new ActionListener() {
+		basica.addActionListener(new ActionListener() { /**/
 			public void actionPerformed(ActionEvent e) {
 				/*if(b==true) {
 					estandar.setColorPressed(new Color(142, 153, 243));
