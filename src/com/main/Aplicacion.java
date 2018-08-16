@@ -8,7 +8,7 @@ import com.etc.RSButtonMetro;
 
 public class Aplicacion extends JFrame {
 
-	public JPanel contentPane, Login;
+	public JPanel contentPane, Login,desplega,desplegado;
 	public int x,y;
 	public JButton exit;
 	public JLabel label, inicio;
@@ -18,6 +18,7 @@ public class Aplicacion extends JFrame {
 		public Aplicacion frame = this; // nesesario para el cambio de resoluciones.
 	public JLabel aviso;
 	public JSeparator separator,separator2,separator3,separator4; // se crean nuevos separadores- tomar en cuenta en resoluciones
+	
 	/**
 	 * Launch the application.
 	 */
@@ -84,7 +85,7 @@ public class Aplicacion extends JFrame {
 				setLocation(xx-x,yy-y);
 			}
 		});
-		label.setBounds(0, 1, 404, 60);
+		label.setBounds(0, 1, 404, 75);
 		Login.add(label);
 		
 		inicio = new JLabel("TextEditor");
@@ -103,11 +104,11 @@ public class Aplicacion extends JFrame {
 		});
 		inicio.setForeground(new Color(255, 255, 255));
 		inicio.setFont(new Font("Roboto Thin", Font.BOLD, 50));
-		inicio.setBounds(10, 1, 261, 60);
+		inicio.setBounds(10, 11, 261, 60);
 		Login.add(inicio);
 
 		separator = new JSeparator();
-		separator.setBounds(1, 60, 403, 1);
+		separator.setBounds(1, 75, 403, 1);
 		Login.add(separator);
 		
 		file = new RSButtonMetro();
@@ -120,6 +121,8 @@ public class Aplicacion extends JFrame {
 					Animacion.Animacion.bajar(220, 270, 1, 1, config);
 					separator4.setBounds(30, 307, 100, 1);
 					
+					desplega.setVisible(true);	// nesesario para el cambio de resoluciones.
+						Animacion.Animacion.bajar(128, 168, 2, 1, desplega); // nesesario para el cambio de resoluciones.
 					newFile.setVisible(true);
 					menuActivo=true;
 					aviso.setBounds(180, 174, 30, 35);// nesesario para el cambio de resoluciones.
@@ -133,6 +136,7 @@ public class Aplicacion extends JFrame {
 					Animacion.Animacion.subir(270, 220, 1, 1, config);
 					separator4.setBounds(30, 257, 100, 1);
 					
+					desplega.setVisible(false);
 					newFile.setVisible(false);
 					menuActivo=false;
 					aviso.setBounds(180, 266, 30, 35);// nesesario para el cambio de resoluciones.
@@ -157,21 +161,28 @@ public class Aplicacion extends JFrame {
 		file.setBounds(23, 128, 150, 35); 							//Modificado 
 		Login.add(file);
 		
-		newFile = new RSButtonMetro();								// nesesario para el cambio de resoluciones.
-		newFile.setVisible(false);
-		newFile.setText("New File ");
-		newFile.setHorizontalAlignment(SwingConstants.LEFT);
-		newFile.setFont(new Font("Roboto Thin", Font.BOLD, 20));
-		newFile.setFocusable(false);
-		newFile.setColorPressed(new Color(142, 153, 243));
-		newFile.setColorNormal(new Color(92, 107, 192));
-		newFile.setColorHover(new Color(142, 153, 243));
-		newFile.setBounds(60, 174, 110, 35);
-		Login.add(newFile);
-		
 		separator2 = new JSeparator();
 		separator2.setBounds(30, 165, 100, 1);
 		Login.add(separator2);
+		
+			desplega = new JPanel(); 			// nesesario para el cambio de resoluciones.
+			desplega.setVisible(false);
+			desplega.setBackground(new Color(73,89,154));
+			desplega.setBounds(0, 128, 403, 41);
+			desplega.setLayout(null);
+			Login.add(desplega);
+			
+				newFile = new RSButtonMetro();								// nesesario para el cambio de resoluciones.
+				newFile.setBounds(60, 3, 110, 35);
+				desplega.add(newFile);
+				newFile.setVisible(false);
+				newFile.setText("New File ");
+				newFile.setHorizontalAlignment(SwingConstants.CENTER);
+				newFile.setFont(new Font("Roboto Thin", Font.BOLD, 20));
+				newFile.setFocusable(false);
+				newFile.setColorPressed(new Color(142, 153, 243));
+				newFile.setColorNormal(new Color(73,89,154));
+				newFile.setColorHover(new Color(142, 153, 243));
 		
 		edit = new RSButtonMetro();
 		edit.addActionListener(new ActionListener() {
@@ -198,6 +209,9 @@ public class Aplicacion extends JFrame {
 			public void actionPerformed(ActionEvent a) {
 				if (cont==1 && menuActivo==false) {
 					//Animacion.Animacion.bajar(266, 350, 2, 1, exitt);
+					
+					desplegado.setVisible(true);	// nesesario para el cambio de resoluciones.
+						Animacion.Animacion.bajar(220, 260, 2, 1, desplegado); // nesesario para el cambio de resoluciones.
 					aviso.setVisible(false);
 					resolucion.setVisible(true);
 					menuActivo=true;
@@ -207,6 +221,8 @@ public class Aplicacion extends JFrame {
 					if(cont==0 && menuActivo==true) {
 					//Animacion.Animacion.subir(300, 256, 2, 1, exitt);
 						//aviso.setBounds(180, 266, 30, 35);
+						
+					desplegado.setVisible(false);	// nesesario para el cambio de resoluciones.
 					aviso.setVisible(false);
 					resolucion.setVisible(false);
 					menuActivo=false;
@@ -233,6 +249,115 @@ public class Aplicacion extends JFrame {
 		separator4.setBounds(30, 257, 100, 1);
 		Login.add(separator4);
 		
+		desplegado = new JPanel(); 			// nesesario para el cambio de resoluciones.
+		desplegado.setVisible(false);
+		desplegado.setBackground(new Color(73,89,154));
+		desplegado.setBounds(0, 220, 403, 41);
+		desplegado.setLayout(null);
+		Login.add(desplegado);
+		
+			resolucion = new RSButtonMetro();
+			resolucion.setBounds(60, 3, 110, 35);
+			desplegado.add(resolucion);
+			resolucion.addActionListener(new ActionListener(){ /**/
+				int cont=1;
+				public void actionPerformed(ActionEvent e) {
+					if(cont==1) {
+						/*Animacion de botones principales*/
+						Animacion.Animacion.mover_izquierda(23, -175, 1, 1, file);
+						Animacion.Animacion.mover_izquierda(23, -175, 1, 1, edit);
+						Animacion.Animacion.mover_izquierda(23, -175, 1, 1, config);
+						separator2.setVisible(false);
+						separator3.setVisible(false);
+						separator4.setVisible(false);
+						/*Animacion de botones principales*/
+							desplegado.setVisible(false); //Anadido
+									menuActivo=false;
+							Login.add(resolucion);		  //anadido
+							resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 25));
+							resolucion.setBounds(23, 128, 150, 35);
+							resolucion.setColorPressed(new Color(92, 107, 192));
+							resolucion.setColorNormal(new Color(92, 107, 192));
+							resolucion.setColorHover(new Color(92, 107, 192));
+							//xx
+							estandar.setVisible(true);
+							basica.setVisible(true);
+							//xx
+							bandera="resolucion";
+						about.setText("Exit");
+						System.out.println("Resolution cont: "+cont);
+					}//fin if
+					//System.out.println("Resolution listener");
+				}
+			});
+			resolucion.setText("Resolution");
+			resolucion.setHorizontalAlignment(SwingConstants.LEFT);
+			resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 20));
+			resolucion.setFocusable(false);
+			resolucion.setColorPressed(new Color(142, 153, 243));
+			resolucion.setColorNormal(new Color(92, 107, 192));
+			resolucion.setColorHover(new Color(142, 153, 243));
+			resolucion.setVisible(false);
+		
+				estandar = new RSButtonMetro();
+				estandar.setVisible(false);
+				estandar.setToolTipText("Estandar");
+				estandar.addActionListener(new ActionListener() { /**/
+					int cont=1;
+					public void actionPerformed(ActionEvent e) {
+						if(b==false) {
+							estandar.setColorPressed(new Color(142, 153, 243));
+							estandar.setColorNormal(new Color(142, 153, 243));
+							estandar.setColorHover(new Color(142, 153, 243));
+								basica.setColorPressed(new Color(142, 153, 243));
+								basica.setColorNormal(new Color(92, 107, 192));
+								basica.setColorHover(new Color(142, 153, 243));
+								System.out.println("REsolucion cmabiada a " + basica.getText());
+								b=true;
+							//cont = 0;
+						}
+					}
+				});
+				estandar.setColorPressed(new Color(142, 153, 243));
+				estandar.setColorNormal(new Color(142, 153, 243));
+				estandar.setColorHover(new Color(142, 153, 243));
+				estandar.setFocusable(false);
+				estandar.setFont(new Font("Roboto Thin", Font.BOLD, 15));
+				estandar.setText("1920x1080");
+				estandar.setBounds(95, 174, 83, 35);
+				Login.add(estandar);
+				
+				basica = new RSButtonMetro();
+				basica.setVisible(false);
+				basica.addActionListener(new ActionListener() { /**/
+					public void actionPerformed(ActionEvent e) {
+						/*if(b==true) {
+							estandar.setColorPressed(new Color(142, 153, 243));
+							estandar.setColorNormal(new Color(92, 107, 192));
+							estandar.setColorHover(new Color(142, 153, 243));
+								basica.setColorPressed(new Color(142, 153, 243));
+								basica.setColorNormal(new Color(142, 153, 243));
+								basica.setColorHover(new Color(142, 153, 243));
+								//new com.etc.ChangeResolution().ResolutionBasic(frame, contentPane, Login, exit, label, inicio, file, edit, config, exitt, about, resolucion, estandar, basica, separator);
+								dispose();
+								new com.etc.ChangeResolution().ResolutionBasic(frame);
+								System.out.println("REsolucion cmabiada a " + basica.getText());
+								b=false;
+							//cont = 0;
+						}
+						*/
+					}
+				});
+				basica.setToolTipText("Basica");
+				basica.setText("1366x768 ");
+				basica.setFont(new Font("Roboto Thin", Font.BOLD, 15));
+				basica.setFocusable(false);
+				basica.setColorPressed(new Color(142, 153, 243));
+				basica.setColorNormal(new Color(92, 107, 192));
+				basica.setColorHover(new Color(142, 153, 243));
+				basica.setBounds(95, 220, 83, 35);
+				Login.add(basica);
+		
 		about = new RSButtonMetro();
 		about.addActionListener(new ActionListener() { /**/
 			int cont=1;
@@ -240,8 +365,9 @@ public class Aplicacion extends JFrame {
 			  if(about.getText().equals("Exit") && bandera.equals("resolucion")) {
 					about.setText("About");
 					resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 20));
-					resolucion.setBounds(60, 128, 110, 35);
-					Animacion.Animacion.bajar(128, 266, 1, 1, resolucion);
+					desplegado.add(resolucion);
+					resolucion.setBounds(60, 3, 110, 35);
+						//Animacion.Animacion.bajar(128, 266, 1, 1, resolucion);
 					estandar.setVisible(false);
 					basica.setVisible(false);
 					resolucion.setColorPressed(new Color(142, 153, 243));
@@ -287,111 +413,12 @@ public class Aplicacion extends JFrame {
 		about.setBounds(5, 720, 55, 24);
 		Login.add(about);
 		
-		resolucion = new RSButtonMetro();
-		resolucion.addActionListener(new ActionListener(){ /**/
-			int cont=1;
-			public void actionPerformed(ActionEvent e) {
-				if(cont==1) {
-					/*Animacion de botones principales*/
-					Animacion.Animacion.mover_izquierda(23, -175, 1, 1, file);
-					Animacion.Animacion.mover_izquierda(23, -175, 1, 1, edit);
-					Animacion.Animacion.mover_izquierda(23, -175, 1, 1, config);
-					separator2.setVisible(false);
-					separator3.setVisible(false);
-					separator4.setVisible(false);
-					/*Animacion de botones principales*/
-						resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 25));
-						resolucion.setBounds(23, 128, 150, 35);
-						resolucion.setColorPressed(new Color(92, 107, 192));
-						resolucion.setColorNormal(new Color(92, 107, 192));
-						resolucion.setColorHover(new Color(92, 107, 192));
-						//xx
-						estandar.setVisible(true);
-						basica.setVisible(true);
-						//xx
-						bandera="resolucion";
-					about.setText("Exit");
-					System.out.println("Resolution cont: "+cont);
-				}//fin if
-				//System.out.println("Resolution listener");
-			}
-		});
-		resolucion.setText("Resolution");
-		resolucion.setHorizontalAlignment(SwingConstants.LEFT);
-		resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 20));
-		resolucion.setFocusable(false);
-		resolucion.setColorPressed(new Color(142, 153, 243));
-		resolucion.setColorNormal(new Color(92, 107, 192));
-		resolucion.setColorHover(new Color(142, 153, 243));
-		resolucion.setBounds(60, 266, 110, 35); 							//Modificado 
-		resolucion.setVisible(false);
-		Login.add(resolucion);
-		
-		estandar = new RSButtonMetro();
-		estandar.setVisible(false);
-		estandar.setToolTipText("Estandar");
-		estandar.addActionListener(new ActionListener() { /**/
-			int cont=1;
-			public void actionPerformed(ActionEvent e) {
-				if(b==false) {
-					estandar.setColorPressed(new Color(142, 153, 243));
-					estandar.setColorNormal(new Color(142, 153, 243));
-					estandar.setColorHover(new Color(142, 153, 243));
-						basica.setColorPressed(new Color(142, 153, 243));
-						basica.setColorNormal(new Color(92, 107, 192));
-						basica.setColorHover(new Color(142, 153, 243));
-						System.out.println("REsolucion cmabiada a " + basica.getText());
-						b=true;
-					//cont = 0;
-				}
-			}
-		});
-		estandar.setColorPressed(new Color(142, 153, 243));
-		estandar.setColorNormal(new Color(142, 153, 243));
-		estandar.setColorHover(new Color(142, 153, 243));
-		estandar.setFocusable(false);
-		estandar.setFont(new Font("Roboto Thin", Font.BOLD, 15));
-		estandar.setText("1920x1080");
-		estandar.setBounds(95, 174, 83, 35);
-		Login.add(estandar);
-		
-		basica = new RSButtonMetro();
-		basica.setVisible(false);
-		basica.addActionListener(new ActionListener() { /**/
-			public void actionPerformed(ActionEvent e) {
-				/*if(b==true) {
-					estandar.setColorPressed(new Color(142, 153, 243));
-					estandar.setColorNormal(new Color(92, 107, 192));
-					estandar.setColorHover(new Color(142, 153, 243));
-						basica.setColorPressed(new Color(142, 153, 243));
-						basica.setColorNormal(new Color(142, 153, 243));
-						basica.setColorHover(new Color(142, 153, 243));
-						//new com.etc.ChangeResolution().ResolutionBasic(frame, contentPane, Login, exit, label, inicio, file, edit, config, exitt, about, resolucion, estandar, basica, separator);
-						dispose();
-						new com.etc.ChangeResolution().ResolutionBasic(frame);
-						System.out.println("REsolucion cmabiada a " + basica.getText());
-						b=false;
-					//cont = 0;
-				}
-				*/
-			}
-		});
-		basica.setToolTipText("Basica");
-		basica.setText("1366x768 ");
-		basica.setFont(new Font("Roboto Thin", Font.BOLD, 15));
-		basica.setFocusable(false);
-		basica.setColorPressed(new Color(142, 153, 243));
-		basica.setColorNormal(new Color(92, 107, 192));
-		basica.setColorHover(new Color(142, 153, 243));
-		basica.setBounds(95, 220, 83, 35);
-		Login.add(basica);
-		
-		aviso = new JLabel(" "); /*aviso anadirlo ala resolucion basica*/
-		aviso.setVisible(false);
-		aviso.setIconTextGap(-10);
-		aviso.setIcon(new ImageIcon(Aplicacion.class.getResource("/com/img/aviso.png")));
-		aviso.setFocusable(false);
-		aviso.setBounds(180, 266, 30, 35);
-		Login.add(aviso);
+			aviso = new JLabel(" "); /*aviso anadirlo ala resolucion basica*/
+			aviso.setVisible(false);
+			aviso.setIconTextGap(-10);
+			aviso.setIcon(new ImageIcon(Aplicacion.class.getResource("/com/img/aviso.png")));
+			aviso.setFocusable(false);
+			aviso.setBounds(180, 266, 30, 35);
+			Login.add(aviso);
 	}
 }
