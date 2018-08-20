@@ -38,7 +38,7 @@ public class Aplicacion extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 405, 750);
 		contentPane = new JPanel();
-		contentPane.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(138, 43, 226)));
+		contentPane.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(138, 43, 226)));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -272,7 +272,7 @@ public class Aplicacion extends JFrame {
 						separator4.setVisible(false);
 						/*Animacion de botones principales*/
 							desplegado.setVisible(false); //Anadido
-									menuActivo=false;
+									//menuActivo=false;
 							Login.add(resolucion);		  //anadido
 							resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 25));
 							resolucion.setBounds(23, 128, 150, 35);
@@ -291,7 +291,6 @@ public class Aplicacion extends JFrame {
 				}
 			});
 			resolucion.setText("Resolution");
-			resolucion.setHorizontalAlignment(SwingConstants.LEFT);
 			resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 20));
 			resolucion.setFocusable(false);
 			resolucion.setColorPressed(new Color(142, 153, 243));
@@ -360,11 +359,14 @@ public class Aplicacion extends JFrame {
 		
 		about = new RSButtonMetro();
 		about.addActionListener(new ActionListener() { /**/
-			int cont=1;
+			int cont=1;boolean b;
 			public void actionPerformed(ActionEvent a) {
+			com.etc.About x = new com.etc.About(); /*About anadirlo a resolucion basica*/
 			  if(about.getText().equals("Exit") && bandera.equals("resolucion")) {
 					about.setText("About");
 					resolucion.setFont(new Font("Roboto Thin", Font.BOLD, 20));
+					
+					desplegado.setBounds(0, 260, 403, 41); // test error, hay que darle doble click al opciones. es molesto
 					desplegado.add(resolucion);
 					resolucion.setBounds(60, 3, 110, 35);
 						//Animacion.Animacion.bajar(128, 266, 1, 1, resolucion);
@@ -387,7 +389,10 @@ public class Aplicacion extends JFrame {
 						Animacion.Animacion.mover_izquierda(23, -175, 2, 1, file);
 						Animacion.Animacion.mover_izquierda(23, -175, 2, 1, edit);
 						Animacion.Animacion.mover_izquierda(23, -175, 2, 1, config);
-							new com.etc.About().acercaDe(Login); /*About anadirlo a resolucion basica*/
+							b = x.acercaDe(Login); /*About anadirlo a resolucion basica*/
+							separator2.setVisible(false);
+							separator3.setVisible(false);
+							separator4.setVisible(false);
 						System.out.println("About cont: "+cont);
 						cont=0;
 					}else {
@@ -395,6 +400,10 @@ public class Aplicacion extends JFrame {
 						Animacion.Animacion.mover_derecha(-175, 23, 1, 1, file);
 						Animacion.Animacion.mover_derecha(-175, 23, 2, 1, edit);
 						Animacion.Animacion.mover_derecha(-175, 23, 3, 1, config);
+						x.quitar(b);
+							separator2.setVisible(true);
+							separator3.setVisible(true);
+							separator4.setVisible(true);
 						System.out.println("About cont: "+cont);
 						cont=1;
 						}else {

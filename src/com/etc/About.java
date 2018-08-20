@@ -6,7 +6,8 @@ import java.awt.*;
 
 public class About{
 	public JLabel label1,label2,label6,label3,label4,label5,label7;
-	public void acercaDe(JPanel Login) {
+	public boolean bandera=false;
+	public boolean acercaDe(JPanel Login) {
 		// TODO Auto-generated method stub
 		
 		label1 = new JLabel("Acerca De");
@@ -45,14 +46,36 @@ public class About{
 		label6.setForeground(new Color(255, 255, 255));
 		label6.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		label7 = new JLabel("Solicita tu contribucion en \n boodah21@protonmail.com");
-		label7.setBounds(50, 285, 291, 14);
+		label7 = new JLabel("Solicita tu contribucion en boodah21@protonmail.com");
+		label7.setBounds(30, 285, 330, 14);
 		Login.add(label7);
 		label7.setForeground(new Color(255, 255, 255));
 		label7.setHorizontalAlignment(SwingConstants.CENTER);
-	}
+		return true;
+	}//fin acercaDe
 	
-	public void remove() {
+	public void quitar(boolean bandera) {
+		if(label1 instanceof JLabel) {
+			System.out.println(true);
+			label1.setForeground(new Color(0,0,0));
+		}
+		else System.out.println(false);
 		
+	/*
+		Animacion.Animacion.mover_derecha(138, 400, 1, 1, label1);
+			label1.setVisible(false);
+		Animacion.Animacion.mover_derecha(145, 400, 1, 1, label2);
+			label2.setVisible(false);
+		Animacion.Animacion.mover_derecha(145, 400, 1, 1, label3);
+			label3.setVisible(false);
+		Animacion.Animacion.mover_derecha(120, 400, 1, 1, label4);
+			label4.setVisible(false);
+		Animacion.Animacion.mover_derecha(100, 400, 1, 1, label5);
+			label5.setVisible(false);
+		Animacion.Animacion.mover_derecha(50, 400, 1, 1, label6);
+			label6.setVisible(false);
+		Animacion.Animacion.mover_derecha(30, 400, 1, 1, label7);
+			label7.setVisible(false);
+	*/
 	}
 }
