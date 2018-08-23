@@ -15,14 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/name/{name}', function($name){
-    return "hola soy ".$name;
-});
+Route::get('prueba/name/{name}','PruebaController@prueba');
 
-Route::get('/name/{name}/lastname/{lastname?}', function($name,$lastname = null){
-    return "hola soy ".$name;
-});
-
-Route::get('/miPrimerRuta',function(){
-    return 'Hello World! mdf';
-});
+Route::resource('trainers', 'TrainerControler');
