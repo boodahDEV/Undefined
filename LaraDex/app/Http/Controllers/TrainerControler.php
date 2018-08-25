@@ -24,7 +24,7 @@ class TrainerControler extends Controller
      */
     public function create()
     {
-        return view('Trainers.create')
+        return view('Layout.create');
         //
     }
 
