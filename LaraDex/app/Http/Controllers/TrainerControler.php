@@ -36,6 +36,9 @@ class TrainerControler extends Controller
      */
     public function store(Request $request)
     {   
+        $trainer = new Trainer();
+        $trainer -> nombre=$$request->input("nombre");
+        $trainer->save();
         return $request->input('nombre'); // este solo retorna lo que yo quiero que retorne en forma separada.!
         //return $request -> all();
         // Almacena un nuevo recurso dentro del storage, para obtener por los datos que viene del formulario
