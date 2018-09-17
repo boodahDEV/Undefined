@@ -1,0 +1,11 @@
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\bin\Debug\netcoreapp2.1\ELP_Program_1.deps.json
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\bin\Debug\netcoreapp2.1\ELP_Program_1.runtimeconfig.json
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\bin\Debug\netcoreapp2.1\ELP_Program_1.runtimeconfig.dev.json
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\bin\Debug\netcoreapp2.1\ELP_Program_1.dll
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\bin\Debug\netcoreapp2.1\ELP_Program_1.pdb
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\obj\Debug\netcoreapp2.1\ELP_Program_1.csprojAssemblyReference.cache
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\obj\Debug\netcoreapp2.1\ELP_Program_1.csproj.CoreCompileInputs.cache
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\obj\Debug\netcoreapp2.1\ELP_Program_1.AssemblyInfoInputs.cache
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\obj\Debug\netcoreapp2.1\ELP_Program_1.AssemblyInfo.cs
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\obj\Debug\netcoreapp2.1\ELP_Program_1.dll
+C:\Users\faust\source\repos\ELP_Program_1\ELP_Program_1\obj\Debug\netcoreapp2.1\ELP_Program_1.pdb
