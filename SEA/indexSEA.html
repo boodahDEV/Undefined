@@ -17,7 +17,6 @@
 </head>
 <body>
 
-
     <!-- ***** MENUBAR PRINCIPAL ***** -->
     <header class="header-area">
         <div class="container">
@@ -38,10 +37,10 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="indexSEA.html">Home</a>
-                                        <a class="dropdown-item" href="catagory.html">None</a>
-                                        <a class="dropdown-item" href="single-blog.html">None</a>
-                                        <a class="dropdown-item" href="regular-page.html">None</a>
-                                        <a class="dropdown-item" href="contact.html">None</a>
+                                        <a class="dropdown-item" href="x.html">None</a>
+                                        <a class="dropdown-item" href="x.html">None</a>
+                                        <a class="dropdown-item" href="x.html">None</a>
+                                        <a class="dropdown-item" href="x.html">None</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -78,11 +77,9 @@
         <!-- imagenes en slide -->
         <div class="hero-slides owl-carousel">
             <!-- IMAGEN Slide -->
-            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/wallpaper3.jpg);"></div>
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/w_3.jpg);"></div>
             <!-- IMAGEN Slide -->
-            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/wallpaper2.jpg);"></div>
-            <!-- IMAGEN Slide -->
-            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/wallpaper3.jpg);"></div>
+            <div class="single-hero-slide bg-img background-overlay" style="background-image: url(img/blog-img/w_2.jpg);"></div>
         </div>
     </div>
     <!-- ********** AREA DE LA IMAGEN PRINCIPAL Y ANIMACION ********** -->
@@ -94,7 +91,6 @@
                         <li class="title">Gestion de Base de Datos</li>
 
                         <li class="nav-item">
-                            <!-- <a class="nav-link active" id="tab1" data-toggle="tab" role="tab" aria-controls="world-tab-1" aria-selected="true" onclick="window.location.href='index.html'" style="cursor:pointer">Conexion</a> -->
                             <a class="nav-link active" id="tab1" data-toggle="tab" href="#world-tab-1" role="tab" aria-controls="world-tab-1" aria-selected="true">Definir DB</a>
                         </li>
 
@@ -113,16 +109,22 @@
                         <li class="nav-item">
                             <a class="nav-link" id="tab5" data-toggle="tab" href="#world-tab-5" role="tab" aria-controls="world-tab-5" aria-selected="false">Travel</a>
                         </li>
-                </ul> <!--  -->
+                </ul> <!-- Barra de opciones del dashboard -->
+
+            <!-- ACCION DE CADA OPCION DEL MENU DEL DASHBOARD -->
                 <div class="tab-pane fade show active" id="world-tab-1" role="tabpanel" aria-labelledby="tab1">
-                        <label for="">Este apartado esta elavorado para seleccionar y subir un archivo .dat ok.</label>
-                        <form action="">
-                            <Button class="btn-principal">Search</Button>
-                        </form>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="post-content-area mb-40 col-12">
+                            <input type="file" class="form-control-file btn" name="archivo" accept="file/xls, .xls"><br>
+                            <button class="btn">Subir</button>
+                        </div>
+                    </form>
                 </div>
+            <!-- ******************************************************************************************************** -->
                 <div class="tab-pane fade" id="world-tab-2" role="tabpanel" aria-labelledby="tab2">
-                        <label for="">Test#2 </label>
+
                 </div>
+            <!-- ACCION DE CADA OPCION DEL MENU DEL DASHBOARD -->
         </div>
     </div>
     <!-- =============  DASHBOARD DEL AREA DE TRABAJO ============= -->
