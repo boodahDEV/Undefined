@@ -1,0 +1,8 @@
+
+CL-USER 1 > (menu :si)
+"*------------------MENU-----------------*
+ *  1) Reservar en el area no fumador ---*
+ *  2) Reservar en el area fumador    ---* 
+ *  3) Imprision de reservas          ---*"
+
+CL-USER 2 > 

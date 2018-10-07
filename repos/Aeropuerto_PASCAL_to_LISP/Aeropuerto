@@ -1,0 +1,43 @@
+(setq v (make-array :(10)))
+(setq n 0 i 0 a 0 p 0 )
+
+(defun verifica_puesto (v puesto)
+ (cond (= v 1 )
+    (verifica_puesto(write 'OCUPADO' )) 
+       (= v 0 )
+    (verifica_puesto(write 'DESOCUPADO'))))
+
+;FUNCION reserva no fumador
+(defun reserva_no fumador(n v)
+(format nil "**** MODULO DE RESERVA DE AREA NO FUMADOR**** ~%~3D")
+(format nil "**** ELIJA UN PUESTO A RESERVA     "  (READ))
+(format nil "**** EL PUESTO A RESERVAR ESTA     ")(verifica_puesto(v puesto))
+(self (aref v 0 ) 1)
+(format nil "**** SE RESERVO EL PUESTO           ~3D",n)
+)
+
+;funcion reserva fumador
+(defun reserva_fumador(n v)
+(format nil "**** MODULO DE RESERVA DE AREA FUMADOR**** ~%~3D")
+(format nil "**** ELIJA UN PUESTO A RESERVA     "  (READ))
+(format nil "**** EL PUESTO A RESERVAR ESTA     ")(verifica_puesto(v puesto))
+(self (aref v 0 ) 1)
+(format nil "**** SE RESERVO EL PUESTO           ~3D",n)
+)
+
+(defun menu (desi) 
+         (case desi
+                (:si "*------------------MENU-----------------*
+ *  1) Reservar en el area no fumador ---*
+ *  2) Reservar en el area fumador    ---* 
+ *  3) Imprision de reservas          ---*")              
+                (:no "MENU NO MOSTRADO")
+               (otherwise "Error, seleccion invalida...")))
+(defun desicion(x)
+	(case x
+	(:1 "*---OPCION NO FUMADOR EN CONSTRUCCION--*" (reserva_no fumador(n v)) )
+        (:2 "*---OPCION FUMADOR EN CONSTRUCCION---*"(reserva_ fumador(n v)))
+        (:3 "*---OPCION IMPRIMIR EN CONSTRUCCION---*")
+        (otherwise "Error, seleccion invalida...")
+	))
+
