@@ -1,0 +1,89 @@
+domains 
+vector=v*
+
+predicates
+
+opcion(integer)
+verifica_puesto(vector,integer,symbol)
+impresion(vector)
+reserva_no_fumador(vector,integer)
+reserva_fumador(vector,integer
+menu
+
+goal
+clearwindow,
+for(1),
+menu.
+
+clauses 
+menu :-write("MENU\n"),
+       write("1.RESERVA AREA NO FUMADOR \n"),
+       write("2.RESERVA AREA DE FUMADOR \n"),
+       write("3.IMPRESION DE RESERVAS  \n"),
+       write("4.FINALIZA RESERVAS      \n"),
+       write("======ELIJA OPCION======\n"),
+       readint(OP),
+       opcion(OP).
+      
+    opcion(X) 
+    :-X=1,write("CUANTAS RESERVAS VA A HACER",readint(N),verifica_no_fumador(vector,N),
+      readchar(Y),
+      menu;
+      X=2,write("CUENTAS RESERVAS VA A HACER",readint(U),verifica_fumador(vector,N),
+      readchar(Y),
+      menu;
+      X=3,impresion(vector),readchar(Y),menu;
+      
+      
+      X=4,write ("adios"),!;
+      X<1,X>4,write("codigo cerrado"),readchar(Y),menu.
+       
+       
+       verifica_puesto(vector,P,OC):- vector = 1,write("OCUPADO"),!;
+       write("DESOCUPADO").
+       
+       
+       
+       
+   impresion(vector):-
+     write("IMPRESION DE RESERVA AREA NO FUMADOR\n");
+     write("PUESTO DEL 1 AL 5\n "),       
+    for(I):-I>5,vector=0,
+                      write(" ",I,"DESOCUPADO")!;
+                      write("",I,,"OCUPADO"),
+                      I1=I+1,
+                      for(I1).
+               for(O):-O>6,vector=0,
+                       write("",O,"DESOCUPADO")!;
+                       write("",I,"OCUPADO"),
+                       O1=0+1,
+                       for(O1).
+                       
+   
+    reserva_no_fumador(vector,N):-
+              for(A):-N>1,
+              write("MODULO DE RESERVA AREA NO FUMADOR\n"),
+              write("ELIJA UN PUESTO A RESERVAR"),
+              readint(P),
+              write("EL PUESTO A RESERVAR ESTA",verifique_puesto( )),
+              for(S):-verifica_puesto(vector,P)='OCUPADO',
+              write ("CORRIJA PUESTO A RESERVAR\n"),
+              write ("EL PUESTO A RESERVAR ESTA",verifica_puesto()),
+              write("ENTER PARA CONTINUAR"),
+              vector[P]=1,
+              write("SE RESERVO EL PUESTO",(P+1),"\n").
+              
+              
+  reserva_fumador(vector,N):-
+                  for(U):-N>1,write("MODULO A RESERVAR AREA FUMADOR"),
+                  write ("ELIJA UN PUESTO A RESERVAR")
+                  readint(U),
+                  write("EL PUESTO A RESERVAR ESTA",verifica_puesto()),
+                  write("ENTER PARA CONTINUAR"),
+                  vector[U]=1,
+                  write("SE RESRERVO EL PUESTO",(P+1),"\n").
+                    
+               
+              
+              
+       
