@@ -1,0 +1,11 @@
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\bin\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.deps.json
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\bin\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.runtimeconfig.json
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\bin\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.runtimeconfig.dev.json
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\bin\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.dll
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\bin\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.pdb
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\obj\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.vbprojAssemblyReference.cache
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\obj\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.vbproj.CoreCompileInputs.cache
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\obj\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.AssemblyInfoInputs.cache
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\obj\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.AssemblyInfo.vb
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\obj\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.dll
+C:\Users\faust\source\repos\Airport_PASCAL_to_VISUALBASIC\Airport_PASCAL_to_VISUALBASIC\obj\Debug\netcoreapp2.1\Airport_PASCAL_to_VISUALBASIC.pdb
